@@ -1,0 +1,6 @@
+.bg-footer {
+  background: var(--color-1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

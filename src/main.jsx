@@ -1,14 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import {MainLayout} from './layouts/MainLayout'
-import { Home } from './pages'
+import { TestPage } from './pages/TestPage'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MainLayout>
-      <Home />
-    </MainLayout>
+    <TestPage />
   </React.StrictMode>,
 )
