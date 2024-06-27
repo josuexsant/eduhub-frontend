@@ -4,6 +4,7 @@ import { Input } from "../components/Input";
 import { CardImage } from "../components/CardImage";
 import '../assets/angular.svg';
 import { CardForm } from "../components/CardForm";
+import { CardEmpty } from "../components/CardEmpty";
 
 export const TestPage = () => {
   const handleClick = () => {
@@ -41,6 +42,14 @@ export const TestPage = () => {
         <Input type="" placeholder="Escribe algo" className="input" /> <br />
         <Button className="btn-1" handleClick={handleClick}>btn-1</Button>
       </CardForm>
+
+      <br />
+
+      <CardEmpty color="card-3 ml-5">
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+      </CardEmpty>
       
 
 

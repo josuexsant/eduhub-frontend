@@ -1,0 +1,43 @@
+.card-empty{
+  width: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+}
+
+.card-1{
+  background-color: var(--color-1);
+  color: white;
+}
+
+.card-2{
+  background-color: var(--color-5);
+  color: white;
+}
+
+.card-3{
+  background-color: var(--color-2);
+  color: black;
+}
+
+.card-4{
+  background-color: var(--color-4);
+  color: black;
+}
+
+.card-5{
+  background-color: var(--color-7);
+  color: var(--txt-1);
+}
+
+.card-6{
+  background-color: var(--color-6);
+  color: var(--txt-5);
+}
+
