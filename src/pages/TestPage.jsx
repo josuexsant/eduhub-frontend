@@ -3,6 +3,7 @@ import { MainLayout } from "../layouts/MainLayout";
 import { Input } from "../components/Input";
 import { CardImage } from "../components/CardImage";
 import '../assets/angular.svg';
+import { CardForm } from "../components/CardForm";
 
 export const TestPage = () => {
   const handleClick = () => {
@@ -34,6 +35,12 @@ export const TestPage = () => {
       {/* Cards */}
       <h1>Cards</h1>
       <CardImage handleClick={handleClick} svg={''} />
+      <br />
+      <CardForm>
+        <label htmlFor="">Texto</label>
+        <Input type="" placeholder="Escribe algo" className="input" /> <br />
+        <Button className="btn-1" handleClick={handleClick}>btn-1</Button>
+      </CardForm>
       
 
 
