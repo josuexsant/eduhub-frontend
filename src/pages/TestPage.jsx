@@ -14,7 +14,8 @@ export const TestPage = () => {
     <MainLayout>
 
       {/*Buttons */}
-      <h1 className="">Buttons</h1>
+
+      <h2>Buttons</h2>
       <hr />
       <div className="inline-flex space-x-4">
         <Button className="btn-1" handleClick={handleClick}>btn-1</Button>
@@ -39,7 +40,7 @@ export const TestPage = () => {
       <br />
       <CardForm>
         <label htmlFor="">Texto</label>
-        <Input type="" placeholder="Escribe algo" className="input" /> <br />
+        <Input type="" placeholderfwb="Escribe algo" className="input" /> <br />
         <Button className="btn-1" handleClick={handleClick}>btn-1</Button>
       </CardForm>
 

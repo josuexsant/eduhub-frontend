@@ -9,7 +9,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="bg-navbar p-4">
+    <nav className="bg-navbar p-4 fixed w-full z-50 block">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
         <div className="text-white font-bold">EDUHUB</div>
         <div className="block lg:hidden">
