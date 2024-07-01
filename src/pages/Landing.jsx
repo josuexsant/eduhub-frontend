@@ -112,3 +112,5 @@ export const Landing = () => {
     </MainLayout>
   );
 };
+
+export default Landing;

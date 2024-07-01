@@ -58,3 +58,5 @@ export const TestPage = () => {
     </MainLayout>
   );
 };
+
+export default TestPage;
