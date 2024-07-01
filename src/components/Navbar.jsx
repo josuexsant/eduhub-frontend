@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "./Button";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,10 +42,14 @@ export const Navbar = () => {
         >
           <ul className="flex flex-col lg:flex-row lg:ml-auto">
             <li className="mt-4 lg:mt-0 lg:ml-4">
-              <Button className="btn-1 navbar-btn">Acceder</Button>
+              <Button className="btn-1 navbar-btn">
+                <Link to="/login">Acceder</Link>
+              </Button>
             </li>
             <li className="mt-4 lg:mt-0 lg:ml-4">
-              <Button className="btn-2 navbar-btn">Registrarse</Button>
+              <Button className="btn-2 navbar-btn">
+                <Link to="/signing">Registrarse</Link>
+              </Button>
             </li>
           </ul>
         </div>
