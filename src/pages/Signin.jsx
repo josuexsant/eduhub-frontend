@@ -20,13 +20,14 @@ export const Signin = () => {
 
   return (
     <MainLayout>
-      <div >
-        <h1>Signin</h1>
+      <div className="blocks block h-auto relative top-16 p-5">
+        <h3>Registrarse</h3>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Correo electrónico</label> <hr />
           <input type="email" id="email" name="email" required /> <hr />
           <label htmlFor="password">Contraseña</label> <hr />
-          <input type="password" id="password" name="password" required /> <hr />
+          <input type="password" id="password" name="password" required />{" "}
+          <hr />
           <button type="submit">Registrarte</button>
         </form>
       </div>
