@@ -1,46 +1,64 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
 import {
   Landing,
   About,
   Home,
   Login,
   Profile,
-  Signing,
+  Signin,
   TestPage,
-} from "./pages/index";
+} from './pages/index';
+import ProtectedRoute from './helpers/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/", // not protected
     element: <Landing />,
   },
   {
-    path: "/about",
+    path: "/about", // not protected
     element: <About />,
   },
   {
-    path: "/home",
-    element: <Home />,
+    path: "/home", // protected
+    element: (
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    ),
   },
   {
-    path: "/login",
+    path: "/login", // not protected
     element: <Login />,
   },
   {
-    path: "/profile",
-    element: <Profile />,
+    path: "/profile", // protected
+    element: (
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    ),
   },
   {
-    path: "/signing",
-    element: <Signing />,
+    path: "/signin", // not protected
+    element: <Signin />,
   },
   {
-    path: "/testpage",
+    path: "/testpage", // not protected
     element: <TestPage />,
+  },
+  {
+    path: "logout",
+    element: () => {
+      // Implement logout functionality if needed
+    },
   },
 ]);
 
-export const App = () => {
+const App = () => {
   return <RouterProvider router={router} />;
 };
 

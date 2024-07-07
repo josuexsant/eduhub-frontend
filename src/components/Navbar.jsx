@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { Button } from "./Button";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth"; // Asegúrate de que la ruta de importación sea correcta
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, signout } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSignout = async () => {
+    await signout();
+    navigate("/"); // Navegar a la página de inicio después de cerrar sesión
   };
 
   return (
@@ -41,16 +49,42 @@ export const Navbar = () => {
           } w-full lg:flex lg:w-auto lg:items-center`}
         >
           <ul className="flex flex-col lg:flex-row lg:ml-auto">
-            <li className="mt-4 lg:mt-0 lg:ml-4">
-              <Button className="btn-1 navbar-btn">
-                <Link to="/login">Acceder</Link>
-              </Button>
-            </li>
-            <li className="mt-4 lg:mt-0 lg:ml-4">
-              <Button className="btn-2 navbar-btn">
-                <Link to="/signing">Registrarse</Link>
-              </Button>
-            </li>
+            {isAuthenticated ? (
+              <>
+                <li className="mt-4 lg:mt-0 lg:ml-4">
+                  <Button className="btn-1 navbar-btn">
+                    <Link to="/profile" className="w-full h-full block">
+                      Perfil
+                    </Link>
+                  </Button>
+                </li>
+                <li className="mt-4 lg:mt-0 lg:ml-4">
+                  <Button
+                    className="btn-2 navbar-btn"
+                    handleClick={handleSignout}
+                  >
+                    Salir
+                  </Button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="mt-4 lg:mt-0 lg:ml-4">
+                  <Button className="btn-1 navbar-btn">
+                    <Link to="/login" className="w-full h-full block">
+                      Acceder
+                    </Link>
+                  </Button>
+                </li>
+                <li className="mt-4 lg:mt-0 lg:ml-4">
+                  <Button className="btn-2 navbar-btn">
+                    <Link to="/signin" className="w-full h-full block">
+                      Registrarse
+                    </Link>
+                  </Button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
